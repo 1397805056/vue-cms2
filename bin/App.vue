@@ -1,6 +1,10 @@
 <template>
   <div class="app-container">
    <mt-header fixed title="鸣哥的小商铺"></mt-header>
+    <!-- 中间的 路由 router-view 区域 -->
+		<transition mode="out-in">
+			<router-view></router-view>
+		</transition>
    <!-- 底部 Tabbar 区域 -->
     <nav class="mui-bar mui-bar-tab">
 			<router-link class="mui-tab-item" to="/home">
@@ -32,5 +36,19 @@
 <style lang="scss" scoped> 
 .app-container{
 	padding-top:40px;
+	overflow-x:hidden;
+}
+
+.v-enter{
+opacity: 0;
+transform: translateX(100%);
+}
+.v-leave-to{
+opacity: 0;
+transform: translateX(-100%);
+}
+.v-enter-active,
+.v-leave-active{
+	transition:all 0.4s ease;
 }
 </style>

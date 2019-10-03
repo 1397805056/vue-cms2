@@ -7,12 +7,19 @@ Vue.use(VueRouter)
 
 // 导入 MUI 的样式表， 和 Bootstrap 用法没有差别
 import './lib/mui/css/mui.min.css'
+import './lib/mui/css/icons-extra.css'
 
 // 导入所有的 MIntUI 组件
 // 导入 Mint-UI
- import {Header} from 'mint-ui' //把头部的组件都导入进来
+ import {Header,Swipe, SwipeItem } from 'mint-ui' //把头部的组件都导入进来
  import 'mint-ui/lib/style.css'
  Vue.component(Header.name, Header);
+ Vue.component(Swipe.name, Swipe);
+ Vue.component(SwipeItem.name, SwipeItem);
+ 
+ //导入vue-resource发送数据请求
+ import VueResource from 'vue-resource'
+ Vue.use(VueResource)
  
 // 导入 app 组件
 import app from './App.vue'
