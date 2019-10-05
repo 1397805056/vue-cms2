@@ -1,32 +1,41 @@
-import Vue from 'vue'
+import Vue from 'vue';
 // 1. 导入 vue-router 包
-import VueRouter from 'vue-router'
+import VueRouter from 'vue-router';
 // 2. 手动安装 VueRouter 
 Vue.use(VueRouter)
 
 
 // 导入 MUI 的样式表， 和 Bootstrap 用法没有差别
-import './lib/mui/css/mui.min.css'
+import './lib/mui/css/mui.min.css';
 import './lib/mui/css/icons-extra.css'
 
 // 导入所有的 MIntUI 组件
 // 导入 Mint-UI
- import {Header,Swipe, SwipeItem } from 'mint-ui' //把头部的组件都导入进来
+ import {Header,Swipe, SwipeItem,Button} from 'mint-ui' //把头部的组件都导入进来
  import 'mint-ui/lib/style.css'
  Vue.component(Header.name, Header);
  Vue.component(Swipe.name, Swipe);
  Vue.component(SwipeItem.name, SwipeItem);
+ Vue.component(Button.name, Button);
  
  //导入vue-resource发送数据请求
  import VueResource from 'vue-resource'
  Vue.use(VueResource)
  
+ Vue.http.options.root='http://www.liulongbin.top:3005';
+ Vue.http.options.emulateJSON=true;
 // 导入 app 组件
 import app from './App.vue'
 
 // 导入 自定义路由模块
 import router from './router.js'
 
+//定义全局过滤器
+import moment from 'moment'
+Vue.filter('dateFormat',function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
+ return moment(dataStr).format(pattern)
+ //处理时间
+})
 var vm = new Vue({
   el: '#app',
   data:{

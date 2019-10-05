@@ -8,8 +8,10 @@
 		
 		   <!-- 九宫格 到 6宫格 的改造工程 -->
     <ul class="mui-table-view mui-grid-view mui-grid-9">
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+      	<router-link to="/home/newlist">
               <img src="../../img/menu1.png" alt="">
+        </router-link>      
               <div class="mui-media-body">新闻资讯</div></a></li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
               <img src="../../img/menu2.png" alt="">
@@ -43,8 +45,8 @@ export default{
 	},
 	methods:{
 		getLunbotu(){
-		//获取轮播图数据
-			this.$http.get('http://www.liulongbin.top:3005/api/getlunbo').then(result=>{
+		//获取轮播图数据 vue-resource中 api前不带/
+			this.$http.get('api/getlunbo').then(result=>{
   					if(result.body.status=== 0){
   						this.lunbotuList=result.body.message;
   					}else{
