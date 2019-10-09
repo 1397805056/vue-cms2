@@ -5,18 +5,33 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter)
 
 
+Vue.config.devtools = true
+
+//安装图片预览插件
+
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
+
 // 导入 MUI 的样式表， 和 Bootstrap 用法没有差别
 import './lib/mui/css/mui.min.css';
 import './lib/mui/css/icons-extra.css'
+import './lib/mui/css/golbal.css'
+
 
 // 导入所有的 MIntUI 组件
 // 导入 Mint-UI
- import {Header,Swipe, SwipeItem,Button} from 'mint-ui' //把头部的组件都导入进来
+/* import {Header,Swipe, SwipeItem,Button,Lazyload} from 'mint-ui' //把头部的组件都导入进来
  import 'mint-ui/lib/style.css'
+
+
+ Vue.use(Lazyload);
  Vue.component(Header.name, Header);
  Vue.component(Swipe.name, Swipe);
  Vue.component(SwipeItem.name, SwipeItem);
- Vue.component(Button.name, Button);
+ Vue.component(Button.name, Button);*/
+import Mint from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use(Mint)
  
  //导入vue-resource发送数据请求
  import VueResource from 'vue-resource'
