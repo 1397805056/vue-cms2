@@ -29,8 +29,8 @@ var router = new VueRouter({
            {path:'/home/photoinfo/:id',component:PhotoInfo}, 
            {path:'/home/goodslist',component:GoodList}, 
            {path:'/home/goodinfo/:id',component:GoodInfo}, 
-           {path:'/home/gooddesc/:id',component:GoodDesc,name:"gooddesc"}, 
-           {path:'/home/goodcomment/:id',component:GoodComment,name:"goodcomment"}, 
+           {path:'/home/gooddesc/:id',component:GoodDesc,name:"goodsdesc"}, 
+           {path:'/home/goodcomment/:id',component:GoodComment,name:"goodscomment"}, 
      
            
 
